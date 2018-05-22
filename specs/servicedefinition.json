@@ -1,0 +1,18 @@
+{
+    "cluster": "${CLUSTER_NAME}",
+    "serviceName": "${DEPLOYED_SERVICE_NAME}",
+    "taskDefinition": "${FAMILY}:${REVISION}",
+    "desiredCount": ${DESIRED_TASK_COUNT},
+    "launchType": "FARGATE",
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": [
+                "${SUBNET_ID}"
+            ],
+            "securityGroups": [
+                "${SECURITY_GROUP_ID}"
+            ],
+            "assignPublicIp": "ENABLED"
+        }
+    }
+}
